@@ -28,7 +28,7 @@ public class MovieToMovieDtoConverterTest {
 	@Test
 	public void shouldConvertMovieToMovieDto() {
 		// given
-		Movie movie = new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true);
+		Movie movie = new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true, null);
 		// when
 		MovieDTO result = movieToMovieDtoConverter.convert(movie);
 		// then
@@ -40,10 +40,10 @@ public class MovieToMovieDtoConverterTest {
 	public void shouldConvertCollectionOfMoviesToCollectionOfMoviesDto() {
 		// given
 		List<Movie> movies = Arrays.asList(//
-				new Movie(1L, "AA1993", "Lista Schindlera", "Polska", "wojenny", 6, true),
-				new Movie(2L, "AA1994", "Pulp Fiction", "USA", "thriller", 6, true),
-				new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true),
-				new Movie(4L, "AA1998", "Szeregowiec Ryan", "USA", "Wojenny", 6, true));
+				new Movie(1L, "AA1993", "Lista Schindlera", "Polska", "wojenny", 6, true, null),
+				new Movie(2L, "AA1994", "Pulp Fiction", "USA", "thriller", 6, true, null),
+				new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true, null),
+				new Movie(4L, "AA1998", "Szeregowiec Ryan", "USA", "Wojenny", 6, true, null));
 		// when
 		Collection<MovieDTO> result = movieToMovieDtoConverter.convert(movies);
 		// then

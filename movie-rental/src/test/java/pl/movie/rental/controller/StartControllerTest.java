@@ -68,10 +68,10 @@ public class StartControllerTest {
 	public void setUp() {
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 		movies = new ArrayList<>(Arrays.asList(//
-				new Movie(1L, "AA1993", "Lista Schindlera", "Polska", "wojenny", 6, true),
-				new Movie(2L, "AA1994", "Pulp Fiction", "USA", "thriller", 6, true),
-				new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true),
-				new Movie(4L, "AA1998", "Szeregowiec Ryan", "USA", "Wojenny", 6, true)));
+				new Movie(1L, "AA1993", "Lista Schindlera", "Polska", "wojenny", 6, true, null),
+				new Movie(2L, "AA1994", "Pulp Fiction", "USA", "thriller", 6, true, null),
+				new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true, null),
+				new Movie(4L, "AA1998", "Szeregowiec Ryan", "USA", "Wojenny", 6, true, null)));
 		pageDto = new PageDTO<Movie>();
 		pageDto.setResult(movies);
 

@@ -42,13 +42,13 @@ public class MovieServiceTest {
 	@Before
 	public void init() {
 		movieList = new ArrayList<>(Arrays.asList(//
-				new Movie(1L, "AA1993", "Lista Schindlera", "Polska", "wojenny", 6, true),
-				new Movie(2L, "AA1994", "Pulp Fiction", "USA", "thriller", 6, true),
-				new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true),
-				new Movie(4L, "AA1998", "Szeregowiec Ryan", "USA", "Wojenny", 6, true),
-				new Movie(5L, "AA2000", "Chlopaki nie placza", "Polska", "komedia", 6, true),
-				new Movie(6L, "AA2002", "Resident Evil", "Wielka Brytania", "horror", 6, true),
-				new Movie(7L, "AA2003", "Kill Bill", "USA", "thriller", 6, true)));
+				new Movie(1L, "AA1993", "Lista Schindlera", "Polska", "wojenny", 6, true, null),
+				new Movie(2L, "AA1994", "Pulp Fiction", "USA", "thriller", 6, true, null),
+				new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true, null),
+				new Movie(4L, "AA1998", "Szeregowiec Ryan", "USA", "Wojenny", 6, true, null),
+				new Movie(5L, "AA2000", "Chlopaki nie placza", "Polska", "komedia", 6, true, null),
+				new Movie(6L, "AA2002", "Resident Evil", "Wielka Brytania", "horror", 6, true, null),
+				new Movie(7L, "AA2003", "Kill Bill", "USA", "thriller", 6, true, null)));
 
 	}
 
@@ -72,7 +72,7 @@ public class MovieServiceTest {
 	@Test
 	public void shouldAddMovie() {
 		// given
-		Movie toSave = new Movie(8L, "AA2006", "Charlie i fabryka czekolady", "USA", "familijny", 8, true);
+		Movie toSave = new Movie(8L, "AA2006", "Charlie i fabryka czekolady", "USA", "familijny", 8, true, null);
 		int sizeBeforeAdd = movieList.size();
 		Mockito.when(mockoMovieRepository.saveAndFlush(Mockito.any(Movie.class))).then(new Answer<Movie>() {
 

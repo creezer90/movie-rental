@@ -25,8 +25,9 @@ public class FileReaderImpl implements FileReader {
 			while ((line = br.readLine()) != null && index++ <= numberOfMovies) {
 				String[] splitted = line.split("\t");
 
-				movies.add(new Movie(null, splitted[0], splitted[1], splitted[2], splitted[3],
-						Integer.parseInt(splitted[4]), (int) (Math.random() * 3) % 2 == 0 ? true : false));
+				// movies.add(new Movie(null, splitted[0], splitted[1],
+				// splitted[2], splitted[3],
+				//			Integer.parseInt(splitted[4]), (int) (Math.random() * 3) % 2 == 0 ? true : false));
 
 			}
 

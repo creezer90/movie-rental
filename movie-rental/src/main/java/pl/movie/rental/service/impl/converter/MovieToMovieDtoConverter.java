@@ -18,7 +18,8 @@ public class MovieToMovieDtoConverter implements ObjectConverter<Movie, MovieDTO
 				.country(model.getCountry())//
 				.genre(model.getGenre())//
 				.price(model.getPrice())//
-				.is_available(model.getIs_available()).build();
+				.is_available(model.getIs_available())//
+				.rentPeriodList(model.getRentPeriodList()).build();
 	}
 
 }

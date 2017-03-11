@@ -18,4 +18,8 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
 	Page<Movie> findAllMovies(Pageable pageable, @Param("id_movie") String id_movie, @Param("title") String title,
 			@Param("country") String country, @Param("genre") String genre, @Param("minPrice") int minPrice,
 			@Param("maxPrice") int maxPrice);
+
+	@Query(value = "SELECT m FROM Movie m LEFT JOIN FETCH m.rentPeriodList WHERE m.id = :id")
+	Movie findMovieById(@Param("id") Long id);
+
 }
