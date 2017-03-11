@@ -16,12 +16,13 @@ public class PersistanceConfiguration {
 	@Bean
 	public DriverManagerDataSource dataSource() {
 		DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
-		driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		driverManagerDataSource.setDriverClassName("org.hsqldb.jdbcDriver");
+		// driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		// driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/movie_rental");
+		driverManagerDataSource.setUrl("jdbc:hsqldb:mem:movie-rental");
 		// driverManagerDataSource.setUrl("jdbc:hsqldb:file:spring-hibernate");
-		driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/movie_rental");
-
-		driverManagerDataSource.setUsername("root");
-		driverManagerDataSource.setPassword("1234");
+		driverManagerDataSource.setUsername("SA");
+		driverManagerDataSource.setPassword("");
 		return driverManagerDataSource;
 	}
 
@@ -37,10 +38,15 @@ public class PersistanceConfiguration {
 
 	private Properties hibProperties() {
 		Properties props = new Properties();
-		props.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		props.put("hibernate.show_sql", true);
-		props.put("hibernate.hbm2ddl.auto", "update");// create-drop
-		// props.put("hibernate.hbm2ddl.import_files", "data.sql");
+		props.put("hibernate.hbm2ddl.auto", "create-drop"); // or update
+
+		// MySQL
+		// props.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+
+		// HSQL
+		props.put("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
+		props.put("hibernate.hbm2ddl.import_files", "data/data.sql");
 		return props;
 	}
 

@@ -139,7 +139,7 @@
 		</table>
 	</div>
 	<div id="div_forms">
-		<form action="/--movie-rental/" id="movieContextForm">
+		<form action="/movie-rental/" id="movieContextForm">
 			<table border="1">
 				<tr>
 					<td bgcolor="silver">Movie id:</td>
