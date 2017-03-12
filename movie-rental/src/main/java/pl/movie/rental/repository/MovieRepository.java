@@ -10,7 +10,7 @@ import pl.movie.rental.model.Movie;
 
 public interface MovieRepository extends JpaRepository<Movie, Long> {
 
-	@Query(value = "select m FROM Movie m WHERE m.id_movie LIKE :id_movie AND m.title LIKE :title AND m.country"
+	@Query(value = "select m FROM Movie m LEFT JOIN FETCH m.rentPeriodList WHERE m.id_movie LIKE :id_movie AND m.title LIKE :title AND m.country"
 			+ " LIKE :country AND m.genre LIKE :genre AND m.price >= :minPrice AND m.price"
 			+ " <= :maxPrice", countQuery = "select count(m) from Movie m WHERE m.id_movie LIKE :id_movie "
 					+ "AND m.title LIKE :title AND m.country LIKE :country AND m.genre LIKE :genre AND "

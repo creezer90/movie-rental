@@ -1,9 +1,6 @@
 package pl.movie.rental.model;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -36,6 +33,6 @@ public class Movie {
 	private Boolean is_available;
 
 	@OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
-	private List<RentPeriod> rentPeriodList = new LinkedList<>();
+	private List<RentPeriod> rentPeriodList;
 
 }

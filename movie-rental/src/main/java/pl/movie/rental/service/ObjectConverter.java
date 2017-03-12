@@ -29,7 +29,6 @@ public interface ObjectConverter<OBJFROM, OBJTO> {
 
 		String sortBy = order.getProperty();
 		String direction = order.getDirection().name();
-		String lastSortBy = orders.next().getProperty();
 
 		return (PageDTO<OBJTO>) PageDTO.builder()//
 				.pageNumber(page.getNumber())//

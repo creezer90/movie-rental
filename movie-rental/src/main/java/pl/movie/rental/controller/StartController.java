@@ -14,7 +14,6 @@ import pl.movie.rental.commands.SearchCriteriaCommand;
 import pl.movie.rental.model.Movie;
 import pl.movie.rental.service.MovieService;
 import pl.movie.rental.service.ObjectConverter;
-import pl.movie.rental.service.impl.MovieServiceImpl;
 
 @Controller
 @RequestMapping("/")
