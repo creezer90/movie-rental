@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Before;
@@ -32,14 +33,17 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import pl.movie.rental.DTO.MovieDTO;
 import pl.movie.rental.DTO.PageDTO;
+import pl.movie.rental.DTO.RentPeriodDTO;
 import pl.movie.rental.commands.SearchCriteriaCommand;
 import pl.movie.rental.controller.StartController;
 import pl.movie.rental.model.Movie;
+import pl.movie.rental.model.RentPeriod;
 import pl.movie.rental.repository.MovieRepository;
 import pl.movie.rental.service.MovieService;
 import pl.movie.rental.service.ObjectConverter;
 import pl.movie.rental.service.impl.MovieServiceImpl;
 import pl.movie.rental.service.impl.converter.MovieToMovieDtoConverter;
+import pl.movie.rental.service.impl.converter.RentPeriodToRentPeriodDtoConverter;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = StartControllerTest.StartControllerTestConfiguration.class)
@@ -68,10 +72,10 @@ public class StartControllerTest {
 	public void setUp() {
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 		movies = new ArrayList<>(Arrays.asList(//
-				new Movie(1L, "AA1993", "Lista Schindlera", "Polska", "wojenny", 6, true, null),
-				new Movie(2L, "AA1994", "Pulp Fiction", "USA", "thriller", 6, true, null),
-				new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true, null),
-				new Movie(4L, "AA1998", "Szeregowiec Ryan", "USA", "Wojenny", 6, true, null)));
+				new Movie(1L, "AA1993", "Lista Schindlera", "Polska", "wojenny", 6, true, new LinkedList<>()),
+				new Movie(2L, "AA1994", "Pulp Fiction", "USA", "thriller", 6, true, new LinkedList<>()),
+				new Movie(3L, "AA1995", "Siedem", "USA", "Thriller", 6, true, new LinkedList<>()),
+				new Movie(4L, "AA1998", "Szeregowiec Ryan", "USA", "Wojenny", 6, true, new LinkedList<>())));
 		pageDto = new PageDTO<Movie>();
 		pageDto.setResult(movies);
 
@@ -101,8 +105,13 @@ public class StartControllerTest {
 		}
 
 		@Bean
-		public ObjectConverter<Movie, MovieDTO> converter() {
+		public ObjectConverter<Movie, MovieDTO> movieToMovieDtoonverter() {
 			return Mockito.mock(MovieToMovieDtoConverter.class);
+		}
+
+		@Bean
+		public ObjectConverter<RentPeriod, RentPeriodDTO> rentPeriodToRentPeriodDtoConverter() {
+			return new RentPeriodToRentPeriodDtoConverter();
 		}
 
 		@Bean
