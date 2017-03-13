@@ -58,7 +58,7 @@
 	function forwardMovie(id){
 		var createdForm = document.createElement('form'); 
 		createdForm.setAttribute("action", "rentMovieView"); 
-		createdForm.setAttribute("method", "post"); 
+		createdForm.setAttribute("method", "get"); 
 		
 		var idInput = document.createElement('input');
 		idInput.setAttribute("type", "hidden");
