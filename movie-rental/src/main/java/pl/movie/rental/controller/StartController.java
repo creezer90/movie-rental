@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.movie.rental.DTO.MovieDTO;
 import pl.movie.rental.commands.GetMovieCommand;
+import pl.movie.rental.commands.RegisterUserCommand;
 import pl.movie.rental.commands.SearchCriteriaCommand;
 import pl.movie.rental.model.Movie;
 import pl.movie.rental.service.MovieService;
@@ -34,10 +35,17 @@ public class StartController {
 		return "view";
 	}
 
-	@RequestMapping(value = "/rentMovieView", method = RequestMethod.POST)
+	@RequestMapping(value = "/rentMovieView", method = RequestMethod.GET)
 	public String rentView(ModelMap model, @RequestParam("id") Long id) {
 		model.addAttribute("movie", movieServiceImpl.findMovieById(id));
 		return "rentMovieView";
+
+	}
+
+	@RequestMapping(value = "/registration", method = RequestMethod.GET)
+	public String registration(ModelMap model) {
+		model.addAttribute("userForm", new RegisterUserCommand());
+		return "registration";
 	}
 
 }

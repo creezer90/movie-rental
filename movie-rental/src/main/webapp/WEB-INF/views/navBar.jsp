@@ -21,6 +21,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style type="text/css">
+.left-margin {
+	margin-left: 5px;
+}
+</style>
 </head>
 
 <body>
@@ -36,32 +41,36 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Project name</a>
+			<a class="navbar-brand" onclick="document.location.href='/movie-rental/'">Movie Rental</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Dropdown <span class="caret"></span></a>
+					aria-expanded="false">About<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
+						<li><a href="#">About project</a></li>
 						<li role="separator" class="divider"></li>
-						<li class="dropdown-header">Nav header</li>
-						<li><a href="#">Separated link</a></li>
-						<li><a href="#">One more separated link</a></li>
+						<li class="dropdown-header">About me</li>
+						<li><a href="#">GitHub</a></li>
+						<li><a href="#">Contact</a></li>
 					</ul></li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="../navbar/">Default</a></li>
-				<li><a href="../navbar-static-top/">Static top</a></li>
-				<li class="active"><a href="./">Fixed top <span
-						class="sr-only">(current)</span></a></li>
-			</ul>
+			<button type="button"
+				class="btn btn-success navbar-btn pull-right left-margin"
+				onclick="document.location.href='/movie-rental/registration'">Registration</button>
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" name="username"
+						placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" name="password"
+						placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-warning">Sign In</button>
+			</form>
 		</div>
 		<!--/.nav-collapse -->
 	</div>

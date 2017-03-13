@@ -21,7 +21,8 @@
 	rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="<c:url value="css/navbar-fixed-top.css"/>" rel="stylesheet">
-<link href="<c:url value="css/calendar.css"/>" rel="stylesheet">
+
+
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,71 +31,51 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
 </head>
 <body>
 	<jsp:include page="navBar.jsp"></jsp:include>
 
 
 
-	<div class="month">
-		<ul>
-			<li class="prev">&#10094;</li>
-			<li class="next">&#10095;</li>
-			<li>August<br> <span style="font-size: 18px">2016</span>
-			</li>
-		</ul>
+	<div class="container">
+		<c:if test="${newUserReqistered }">
+			<div class="alert alert-success">
+				<p>New User Added</p>
+			</div>
+		</c:if>
+		<div class="panel panel-default">
+			<div class="panel-heading" style="font-weight: bold;">
+				Registration
+				<div class="panel-body"></div>
+				<form:form action="/movie-rental/user/new" commandName="userForm"
+					method="POST">
+					<div class="form-group">
+						<label for="name">Name: <form:errors
+								style="color: red; font-weight: bold;" path="name" /></label>
+						<form:input type="text" class="form-control" id="name" path="name" />
+					</div>
+					<div class="form-group">
+						<label for="email">Email: <form:errors
+								style="color: red; font-weight: bold;" path="email" /></label>
+						<form:input type="text" class="form-control" id="email"
+							path="email" />
+					</div>
+					<div class="form-group">
+						<label for="password">Password: <form:errors
+								style="color: red; font-weight: bold;" path="password" /></label>
+						<form:input type="password" class="form-control" id="password"
+							path="password" />
+					</div>
+					<div class="form-group">
+						<label for="password">Repeat password:</label>
+						<form:input type="password" class="form-control" id="password2"
+							path="passwordRepeated" />
+					</div>
+					<button type="submit" class="btn btn-default">Zarejestruj</button>
+				</form:form>
+			</div>
+		</div>
 	</div>
-
-	<ul class="weekdays">
-		<li>Mo</li>
-		<li>Tu</li>
-		<li>We</li>
-		<li>Th</li>
-		<li>Fr</li>
-		<li>Sa</li>
-		<li>Su</li>
-	</ul>
-
-	<ul class="days">
-		<li>1</li>
-		<li>2</li>
-		<li>3</li>
-		<li>4</li>
-		<li>5</li>
-		<li>6</li>
-		<li>7</li>
-		<li>8</li>
-		<li>9</li>
-		<li><span class="active">10</span></li>
-		<li>11</li>
-		<li>12</li>
-		<li>13</li>
-		<li>14</li>
-		<li>15</li>
-		<li>16</li>
-		<li>17</li>
-		<li>18</li>
-		<li>19</li>
-		<li>20</li>
-		<li>21</li>
-		<li>22</li>
-		<li>23</li>
-		<li>24</li>
-		<li>25</li>
-		<li>26</li>
-		<li>27</li>
-		<li>28</li>
-		<li>29</li>
-		<li>30</li>
-		<li>31</li>
-	</ul>
-
-
-
-
-
-
 
 </body>
 
