@@ -20,9 +20,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.mysema.query.types.Predicate;
+
 import pl.movie.rental.commands.GetMovieCommand;
-import pl.movie.rental.commands.SearchCriteriaCommand;
+import pl.movie.rental.commands.MovieSearchCriteriaCommand;
 import pl.movie.rental.model.Movie;
+import pl.movie.rental.model.criteria.service.MovieQueryFilterService;
+import pl.movie.rental.model.criteria.service.impl.MovieQueryFilterServiceImpl;
 import pl.movie.rental.repository.MovieRepository;
 import pl.movie.rental.service.MovieService;
 import pl.movie.rental.service.impl.MovieServiceImpl;
@@ -55,11 +59,10 @@ public class MovieServiceTest {
 	@Test
 	public void shouldGetAllMovies() {
 		// given
-		Mockito.when(mockoMovieRepository.findAllMovies(Mockito.any(Pageable.class), Mockito.anyString(),
-				Mockito.anyString(), Mockito.anyString(), Mockito.anyString(), Mockito.anyInt(), Mockito.anyInt()))
+		Mockito.when(mockoMovieRepository.findAll(Mockito.any(Predicate.class), Mockito.any(Pageable.class)))
 				.thenReturn(new PageImpl<>(movieList));
 		// when
-		Page<Movie> page = movieService.findMoviesByCriteria(new GetMovieCommand(), new SearchCriteriaCommand());
+		Page<Movie> page = movieService.findMoviesByCriteria(new GetMovieCommand(), new MovieSearchCriteriaCommand());
 		List<Movie> result = page.getContent();
 
 		// then
@@ -96,6 +99,11 @@ public class MovieServiceTest {
 		@Bean
 		public MovieService movieService() {
 			return new MovieServiceImpl();
+		}
+
+		@Bean
+		public MovieQueryFilterService movieQueryFilterService() {
+			return new MovieQueryFilterServiceImpl();
 		}
 
 		@Bean

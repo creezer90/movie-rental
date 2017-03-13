@@ -32,7 +32,7 @@ public class Movie {
 	private int price;
 	private Boolean is_available;
 
-	@OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "movie", fetch = FetchType.EAGER)
 	private List<RentPeriod> rentPeriodList;
 
 }

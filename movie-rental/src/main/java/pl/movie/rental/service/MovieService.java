@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 
 import pl.movie.rental.commands.GetMovieCommand;
-import pl.movie.rental.commands.SearchCriteriaCommand;
+import pl.movie.rental.commands.MovieSearchCriteriaCommand;
 import pl.movie.rental.model.Movie;
 
 public interface MovieService {
@@ -14,7 +14,7 @@ public interface MovieService {
 
 	Movie findMovieById(Long id);
 
-	Page<Movie> findMoviesByCriteria(GetMovieCommand getMoviesCommand, SearchCriteriaCommand searchCriteriaCommand);
+	Page<Movie> findMoviesByCriteria(GetMovieCommand getMoviesCommand, MovieSearchCriteriaCommand searchCriteriaCommand);
 
 	List<Movie> findAllMovies();
 }

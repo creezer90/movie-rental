@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.movie.rental.DTO.MovieDTO;
 import pl.movie.rental.commands.GetMovieCommand;
 import pl.movie.rental.commands.RegisterUserCommand;
-import pl.movie.rental.commands.SearchCriteriaCommand;
+import pl.movie.rental.commands.MovieSearchCriteriaCommand;
 import pl.movie.rental.model.Movie;
 import pl.movie.rental.service.MovieService;
 import pl.movie.rental.service.ObjectConverter;
@@ -19,6 +19,8 @@ import pl.movie.rental.service.ObjectConverter;
 @Controller
 @RequestMapping("/")
 public class StartController {
+
+	// TODO: fix eager fetchType and searching by price
 
 	@Autowired
 	private MovieService movieServiceImpl;
@@ -28,7 +30,7 @@ public class StartController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String view(ModelMap model, @ModelAttribute GetMovieCommand getMovieCommand,
-			@ModelAttribute SearchCriteriaCommand searchCriteriaCommand) {
+			@ModelAttribute MovieSearchCriteriaCommand searchCriteriaCommand) {
 		model.addAttribute("searchCriteria", searchCriteriaCommand);
 		model.addAttribute("movieContext",
 				movieConverter.convert(movieServiceImpl.findMoviesByCriteria(getMovieCommand, searchCriteriaCommand)));

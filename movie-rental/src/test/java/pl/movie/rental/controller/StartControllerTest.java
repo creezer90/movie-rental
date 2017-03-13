@@ -34,10 +34,12 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import pl.movie.rental.DTO.MovieDTO;
 import pl.movie.rental.DTO.PageDTO;
 import pl.movie.rental.DTO.RentPeriodDTO;
-import pl.movie.rental.commands.SearchCriteriaCommand;
+import pl.movie.rental.commands.MovieSearchCriteriaCommand;
 import pl.movie.rental.controller.StartController;
 import pl.movie.rental.model.Movie;
 import pl.movie.rental.model.RentPeriod;
+import pl.movie.rental.model.criteria.service.MovieQueryFilterService;
+import pl.movie.rental.model.criteria.service.impl.MovieQueryFilterServiceImpl;
 import pl.movie.rental.repository.MovieRepository;
 import pl.movie.rental.service.MovieService;
 import pl.movie.rental.service.ObjectConverter;
@@ -87,7 +89,7 @@ public class StartControllerTest {
 		mockMvc.perform(get("/"))//
 				.andExpect(status().isOk()).andExpect(view().name("view"))//
 				.andExpect(forwardedUrl("/WEB-INF/views/view.jsp"))//
-				.andExpect(model().attribute("searchCriteria", new SearchCriteriaCommand()))
+				.andExpect(model().attribute("searchCriteria", new MovieSearchCriteriaCommand()))
 				.andExpect(model().attribute("movieContext", pageDto));//
 	}
 
@@ -130,6 +132,11 @@ public class StartControllerTest {
 			viewResolver.setPrefix("/WEB-INF/views/");
 			viewResolver.setSuffix(".jsp");
 			return viewResolver;
+		}
+
+		@Bean
+		public MovieQueryFilterService movieQueryFilterService() {
+			return new MovieQueryFilterServiceImpl();
 		}
 
 	}

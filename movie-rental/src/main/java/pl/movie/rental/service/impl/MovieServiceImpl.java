@@ -10,8 +10,9 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import pl.movie.rental.commands.GetMovieCommand;
-import pl.movie.rental.commands.SearchCriteriaCommand;
+import pl.movie.rental.commands.MovieSearchCriteriaCommand;
 import pl.movie.rental.model.Movie;
+import pl.movie.rental.model.criteria.service.MovieQueryFilterService;
 import pl.movie.rental.repository.MovieRepository;
 import pl.movie.rental.service.MovieService;
 
@@ -19,7 +20,10 @@ import pl.movie.rental.service.MovieService;
 public class MovieServiceImpl implements MovieService {
 
 	@Autowired
-	MovieRepository movieRepository;
+	private MovieRepository movieRepository;
+
+	@Autowired
+	private MovieQueryFilterService movieQueryFiltrService;
 
 	@Override
 	public Movie addMovie(Movie movie) {
@@ -33,14 +37,12 @@ public class MovieServiceImpl implements MovieService {
 
 	@Override
 	public Page<Movie> findMoviesByCriteria(GetMovieCommand getMoviesCommand,
-			SearchCriteriaCommand searchCriteriaCommand) {
-		return movieRepository.findAllMovies(
+			MovieSearchCriteriaCommand searchCriteriaCommand) {
+
+		return movieRepository.findAll(movieQueryFiltrService.toPredicate(searchCriteriaCommand),
 				new PageRequest(getMoviesCommand.getPageNumber(), getMoviesCommand.getPageSize(),
 						new Sort(Direction.valueOf(getMoviesCommand.getSortDirection()), getMoviesCommand.getSortBy(),
-								getMoviesCommand.getLastSortBy())),
-				"%" + searchCriteriaCommand.getId_movie() + "%", "%" + searchCriteriaCommand.getTitle() + "%",
-				"%" + searchCriteriaCommand.getCountry() + "%", "%" + searchCriteriaCommand.getGenre() + "%",
-				searchCriteriaCommand.getMinPrice(), searchCriteriaCommand.getMaxPrice());
+								getMoviesCommand.getLastSortBy())));
 	}
 
 	@Override
