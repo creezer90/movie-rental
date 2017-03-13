@@ -89,7 +89,47 @@ insert into movie (id, id_movie, title, country, genre, price) values (88, 'NK20
 insert into movie (id, id_movie, title, country, genre, price) values (89, 'NN1994', 'Leon Zawodowiec', 'Francja', 'dramat', 7);
 insert into movie (id, id_movie, title, country, genre, price) values (90, 'NN2006', 'Asterix i wikingowie', 'Francja', 'komedia', 6);
 
-insert into rent_period (id, movie_id, start_date, end_date) values (1, 1, '2017-03-10', '2017-03-17');
+insert into rent_period (id, movie_id, start_date, end_date) values (1, 2, '2017-02-06', '2017-03-02');
+insert into rent_period (id, movie_id, start_date, end_date) values (2, 3, '2017-02-12', '2017-03-03');
+insert into rent_period (id, movie_id, start_date, end_date) values (3, 5, '2017-02-04', '2017-02-23');
+insert into rent_period (id, movie_id, start_date, end_date) values (4, 8, '2017-02-07', '2017-02-21');
+insert into rent_period (id, movie_id, start_date, end_date) values (5, 9, '2017-02-19', '2017-03-03');
+insert into rent_period (id, movie_id, start_date, end_date) values (6, 11, '2017-02-23', '2017-02-25');
+insert into rent_period (id, movie_id, start_date, end_date) values (7, 12, '2017-02-06', '2017-03-03');
+insert into rent_period (id, movie_id, start_date, end_date) values (8, 14, '2017-02-05', '2017-03-03');
+insert into rent_period (id, movie_id, start_date, end_date) values (9, 17, '2017-02-07', '2017-02-28');
+insert into rent_period (id, movie_id, start_date, end_date) values (10, 19, '2017-02-02', '2017-02-22');
+insert into rent_period (id, movie_id, start_date, end_date) values (11, 22, '2017-02-02', '2017-03-01');
+insert into rent_period (id, movie_id, start_date, end_date) values (12, 23, '2017-02-15', '2017-02-17');
+insert into rent_period (id, movie_id, start_date, end_date) values (13, 25, '2017-02-06', '2017-02-27');
+insert into rent_period (id, movie_id, start_date, end_date) values (14, 26, '2017-02-03', '2017-02-28');
+insert into rent_period (id, movie_id, start_date, end_date) values (15, 28, '2017-02-02', '2017-02-23');
+insert into rent_period (id, movie_id, start_date, end_date) values (16, 29, '2017-02-04', '2017-02-18');
+insert into rent_period (id, movie_id, start_date, end_date) values (17, 32, '2017-02-03', '2017-03-03');
+insert into rent_period (id, movie_id, start_date, end_date) values (18, 35, '2017-02-08', '2017-02-10');
+insert into rent_period (id, movie_id, start_date, end_date) values (19, 37, '2017-02-07', '2017-03-01');
+insert into rent_period (id, movie_id, start_date, end_date) values (20, 38, '2017-02-02', '2017-02-27');
+insert into rent_period (id, movie_id, start_date, end_date) values (21, 41, '2017-02-05', '2017-03-03');
+insert into rent_period (id, movie_id, start_date, end_date) values (22, 44, '2017-02-15', '2017-03-01');
+insert into rent_period (id, movie_id, start_date, end_date) values (23, 47, '2017-02-20', '2017-02-23');
+insert into rent_period (id, movie_id, start_date, end_date) values (24, 50, '2017-02-04', '2017-02-16');
+insert into rent_period (id, movie_id, start_date, end_date) values (25, 53, '2017-02-02', '2017-03-03');
+insert into rent_period (id, movie_id, start_date, end_date) values (26, 56, '2017-02-18', '2017-03-03');
+insert into rent_period (id, movie_id, start_date, end_date) values (27, 58, '2017-02-13', '2017-02-28');
+insert into rent_period (id, movie_id, start_date, end_date) values (28, 60, '2017-02-06', '2017-02-26');
+insert into rent_period (id, movie_id, start_date, end_date) values (29, 61, '2017-02-09', '2017-02-28');
+insert into rent_period (id, movie_id, start_date, end_date) values (30, 64, '2017-02-14', '2017-03-01');
+insert into rent_period (id, movie_id, start_date, end_date) values (31, 66, '2017-02-15', '2017-02-22');
+insert into rent_period (id, movie_id, start_date, end_date) values (32, 69, '2017-02-03', '2017-03-03');
+insert into rent_period (id, movie_id, start_date, end_date) values (33, 70, '2017-02-19', '2017-02-28');
+insert into rent_period (id, movie_id, start_date, end_date) values (34, 72, '2017-02-10', '2017-02-21');
+insert into rent_period (id, movie_id, start_date, end_date) values (35, 73, '2017-02-10', '2017-02-17');
+insert into rent_period (id, movie_id, start_date, end_date) values (36, 74, '2017-02-03', '2017-02-22');
+insert into rent_period (id, movie_id, start_date, end_date) values (37, 76, '2017-02-02', '2017-03-01');
+insert into rent_period (id, movie_id, start_date, end_date) values (38, 79, '2017-02-02', '2017-02-07');
+insert into rent_period (id, movie_id, start_date, end_date) values (39, 82, '2017-02-02', '2017-02-20');
+insert into rent_period (id, movie_id, start_date, end_date) values (40, 85, '2017-02-11', '2017-02-25');
+insert into rent_period (id, movie_id, start_date, end_date) values (41, 88, '2017-02-26', '2017-02-28');
 
 
 
