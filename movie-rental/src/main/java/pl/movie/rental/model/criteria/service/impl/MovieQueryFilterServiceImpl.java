@@ -10,10 +10,8 @@ import org.springframework.util.StringUtils;
 import com.mysema.query.types.Predicate;
 import com.mysema.query.types.expr.BooleanExpression;
 
-import pl.movie.rental.DTO.RentPeriodDTO;
 import pl.movie.rental.commands.MovieSearchCriteriaCommand;
 import pl.movie.rental.model.QMovie;
-import pl.movie.rental.model.RentPeriod;
 import pl.movie.rental.model.criteria.service.MovieQueryFilterService;
 
 @Service

@@ -165,17 +165,17 @@
 				</tr>
 				<tr>
 					<td bgcolor="silver">Min price:</td>
-					<td><input type="text" name="price"
+					<td><input type="text" name="minPrice"
 						value="${searchCriteria.minPrice}" /></td>
 				</tr>
 				<tr>
 					<td bgcolor="silver">Max price:</td>
-					<td><input type="text" name="price"
+					<td><input type="text" name="maxPrice"
 						value="${searchCriteria.maxPrice}" /></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center" bgcolor="silver"><input
-						type="submit" value="Dodaj osobe" /></td>
+						type="submit" value="Search" /></td>
 				</tr>
 			</table>
 

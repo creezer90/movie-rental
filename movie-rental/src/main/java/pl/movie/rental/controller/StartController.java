@@ -30,10 +30,10 @@ public class StartController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String view(ModelMap model, @ModelAttribute GetMovieCommand getMovieCommand,
-			@ModelAttribute MovieSearchCriteriaCommand searchCriteriaCommand) {
-		model.addAttribute("searchCriteria", searchCriteriaCommand);
+			@ModelAttribute MovieSearchCriteriaCommand movieSearchCriteriaCommand) {
+		model.addAttribute("searchCriteria", movieSearchCriteriaCommand);
 		model.addAttribute("movieContext",
-				movieConverter.convert(movieServiceImpl.findMoviesByCriteria(getMovieCommand, searchCriteriaCommand)));
+				movieConverter.convert(movieServiceImpl.findMoviesByCriteria(getMovieCommand, movieSearchCriteriaCommand)));
 		return "view";
 	}
 
