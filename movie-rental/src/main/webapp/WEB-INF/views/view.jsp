@@ -73,7 +73,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="navBar.jsp"></jsp:include>
+	<jsp:include page="navigation.jsp"></jsp:include>
 
 
 	<div class="container">

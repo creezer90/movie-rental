@@ -1,3 +1,10 @@
+insert into userRole (id, authority) values (1, 'ROLE_ADMIN');
+insert into userRole (id, authority) values (2, 'ROLE_USER');
+
+insert into user (id, name, email, password) values (1, 'Administrator', 'admin', '$2a$10$LgANaJAQD9NIeUem5AXdLuPD90VX/dDCjTLZARLVDeaL0LhDYIzIa');
+insert into user (id, name, email, password) values (2, 'Slawek', 'slawek', '$2a$10$padEXYcWdLInH92GKwr0nOOf3pL/h5KT/l5KRWO.H1J/AjpHFMH.W');
+
+
 insert into movie (id, id_movie, title, country, genre, price) values (1, 'AA1993', 'Lista Schindlera', 'Polska', 'wojenny', 6);
 insert into movie (id, id_movie, title, country, genre, price) values (2, 'AA1994', 'Pulp Fiction', 'USA', 'thriller', 6);
 insert into movie (id, id_movie, title, country, genre, price) values (3, 'AA1995', 'Siedem', 'USA', 'thriller', 8);

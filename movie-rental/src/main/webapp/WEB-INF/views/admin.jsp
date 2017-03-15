@@ -33,11 +33,11 @@
 
 </head>
 <body>
-	<jsp:include page="navBar.jsp"></jsp:include>
+	<jsp:include page="navigation.jsp"></jsp:include>
 
 
 
-	
+
 
 
 
@@ -51,7 +51,7 @@
 <script>
 	window.jQuery
 			|| document
-					.write('<script src="js/vendor/jquery.min.js"><\/script>')
+					.write('_$tag__________________________________$tag_____')
 </script>
 <!-- Bootstrap core JavaScript
     ================================================== -->

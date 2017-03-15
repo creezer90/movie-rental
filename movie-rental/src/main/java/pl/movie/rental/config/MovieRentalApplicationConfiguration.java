@@ -11,9 +11,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @ComponentScan(basePackages = "pl.movie.rental")
-@Import(PersistanceConfiguration.class)
 @EnableWebMvc
-public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
+public class MovieRentalApplicationConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
