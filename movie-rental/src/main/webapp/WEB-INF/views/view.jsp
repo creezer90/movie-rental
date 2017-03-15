@@ -140,57 +140,57 @@
 			</td>
 		</table>
 	</div>
-	<div id="div_forms">
-		<form action="/movie-rental/" id="movieContextForm">
-			<table border="1">
-				<tr>
-					<td bgcolor="silver">Movie id:</td>
-					<td><input type="text" name="id_movie"
-						value="${searchCriteria.id_movie}" /></td>
-				</tr>
-				<tr>
-					<td bgcolor="silver">Title:</td>
-					<td><input type="text" name="title"
-						value="${searchCriteria.title}" /></td>
-				</tr>
-				<tr>
-					<td bgcolor="silver">Country</td>
-					<td><input type="text" name="country"
-						value="${searchCriteria.country}" /></td>
-				</tr>
-				<tr>
-					<td bgcolor="silver">Genre::</td>
-					<td><input type="text" name="genre"
-						value="${searchCriteria.genre}" /></td>
-				</tr>
-				<tr>
-					<td bgcolor="silver">Min price:</td>
-					<td><input type="text" name="minPrice"
-						value="${searchCriteria.minPrice}" /></td>
-				</tr>
-				<tr>
-					<td bgcolor="silver">Max price:</td>
-					<td><input type="text" name="maxPrice"
-						value="${searchCriteria.maxPrice}" /></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center" bgcolor="silver"><input
-						type="submit" value="Search" /></td>
-				</tr>
-			</table>
+	<div class="panel panel-default" style="width: 50%; margin: auto;">
+		<div class="panel-heading" style="font-weight: bold;">Search
+			form</div>
+		<div class="panel-body" id="div_forms">
+			<form action="/movie-rental/" id="movieContextForm">
 
 
-			<input type="hidden" id="movieContextSortBy" name="sortBy"
-				value="${movieContext.sortBy}" /> <input type="hidden"
-				id="movieContextLastSortBy" name="lastSortBy"
-				value="${movieContext.lastSortBy}" /> <input type="hidden"
-				id="movieContextPageSize" name="pageSize"
-				value="${movieContext.pageSize}" /> <input type="hidden"
-				id="movieContextPageNumber" name="pageNumber"
-				value="${movieContext.pageNumber}" /> <input type="hidden"
-				id="movieContextSortDirection" name="sortDirection"
-				value="${movieContext.sortDirection}" />
-		</form>
+				<div class="form-group">
+					<label for="input_movie_id">Movie id:</label> <input type="text"
+						name="id_movie" value="${searchCriteria.id_movie}"
+						class="form-control" id="movie_id" />
+				</div>
+				<div class="form-group">
+					<label for="input_title">Title:</label> <input type="text"
+						name="title" value="${searchCriteria.title}" class="form-control"
+						id="input_title" />
+				</div>
+				<div class="form-group">
+					<label for="input_country">Country:</label> <input type="text"
+						name="country" value="${searchCriteria.country}"
+						class="form-control" id="input_country" />
+				</div>
+				<div class="form-group">
+					<label for="input_genre">Genre:</label> <input type="text"
+						name="genre" value="${searchCriteria.genre}" class="form-control"
+						id="input_genre" />
+				</div>
+				<div class="form-group">
+					<label for="input_minPrice">Min price:</label> <input type="text"
+						name="minPrice" value="${searchCriteria.minPrice}"
+						class="form-control" id="input_minPrice" />
+				</div>
+				<div class="form-group">
+					<label for="input_maxPrice">Max price:</label> <input type="text"
+						name="maxPrice" value="${searchCriteria.maxPrice}"
+						class="form-control" id="input_minPrice" />
+				</div>
+				<button type="submit" class="btn btn-default">Search</button>
+
+				<input type="hidden" id="movieContextSortBy" name="sortBy"
+					value="${movieContext.sortBy}" /> <input type="hidden"
+					id="movieContextLastSortBy" name="lastSortBy"
+					value="${movieContext.lastSortBy}" /> <input type="hidden"
+					id="movieContextPageSize" name="pageSize"
+					value="${movieContext.pageSize}" /> <input type="hidden"
+					id="movieContextPageNumber" name="pageNumber"
+					value="${movieContext.pageNumber}" /> <input type="hidden"
+					id="movieContextSortDirection" name="sortDirection"
+					value="${movieContext.sortDirection}" />
+			</form>
+		</div>
 	</div>
 </body>
 
