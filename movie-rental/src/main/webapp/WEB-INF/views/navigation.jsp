@@ -44,6 +44,7 @@
 
 			<c:choose>
 				<c:when test="${loggedIn}">
+					<c:url value="/logout" var="logoutUrl" />
 					<form action="${logoutUrl}" method="post">
 						<input type="hidden" name="${_csrf.parameterName}"
 							value="${_csrf.token}" />

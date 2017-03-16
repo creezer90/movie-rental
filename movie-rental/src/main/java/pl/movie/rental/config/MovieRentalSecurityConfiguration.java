@@ -42,7 +42,7 @@ public class MovieRentalSecurityConfiguration extends WebSecurityConfigurerAdapt
 				.and()//
 				.logout().logoutSuccessUrl("/?logout=true")//
 				.and()//
-				.exceptionHandling().accessDeniedPage("/denide");
+				.exceptionHandling().accessDeniedPage("/denied");
 
 	}
 
