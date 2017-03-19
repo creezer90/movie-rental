@@ -25,14 +25,14 @@ public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Long id;
-	private String id_movie;
+	private String code;
 	private String title;
 	private String country;
 	private String genre;
 	private int price;
 	private Boolean is_available;
 
-	@OneToMany(mappedBy = "movie", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
 	private List<RentPeriod> rentPeriodList;
 
 }

@@ -14,7 +14,8 @@ public interface MovieService {
 
 	Movie findMovieById(Long id);
 
-	Page<Movie> findMoviesByCriteria(GetMovieCommand getMoviesCommand, MovieSearchCriteriaCommand searchCriteriaCommand);
+	Page<Movie> findMoviesByCriteria(GetMovieCommand getMoviesCommand,
+			MovieSearchCriteriaCommand searchCriteriaCommand);
 
 	List<Movie> findAllMovies();
 }

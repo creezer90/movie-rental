@@ -20,8 +20,6 @@ import pl.movie.rental.service.ObjectConverter;
 @RequestMapping("/")
 public class StartController {
 
-	// TODO: fix eager fetchType and searching by price
-
 	@Autowired
 	private MovieService movieServiceImpl;
 

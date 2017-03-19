@@ -11,9 +11,11 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import pl.movie.rental.repository.JoinFetchCapableQueryDslJpaRepositoryFactoryBean;
+
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("pl.movie.rental.repository")
+@EnableJpaRepositories(value = "pl.movie.rental.repository", repositoryFactoryBeanClass = JoinFetchCapableQueryDslJpaRepositoryFactoryBean.class)
 public class MovieRentalPersistanceConfiguration {
 	@Bean
 	public DriverManagerDataSource dataSource() {

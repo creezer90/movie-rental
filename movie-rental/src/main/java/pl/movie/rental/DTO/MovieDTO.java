@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class MovieDTO {
 
 	private Long id;
-	private String id_movie;
+	private String code;
 	private String title;
 	private String country;
 	private String genre;

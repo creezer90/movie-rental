@@ -30,7 +30,7 @@ import lombok.Setter;
 public class RentPeriod {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
 	@JoinColumn(name = "movie_id")

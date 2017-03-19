@@ -27,6 +27,7 @@ import pl.movie.rental.commands.MovieSearchCriteriaCommand;
 import pl.movie.rental.model.Movie;
 import pl.movie.rental.model.criteria.service.MovieQueryFilterService;
 import pl.movie.rental.model.criteria.service.impl.MovieQueryFilterServiceImpl;
+import pl.movie.rental.repository.JoinDescriptor;
 import pl.movie.rental.repository.MovieRepository;
 import pl.movie.rental.service.MovieService;
 import pl.movie.rental.service.impl.MovieServiceImpl;
@@ -59,8 +60,8 @@ public class MovieServiceTest {
 	@Test
 	public void shouldGetAllMovies() {
 		// given
-		Mockito.when(mockoMovieRepository.findAll(Mockito.any(Predicate.class), Mockito.any(Pageable.class)))
-				.thenReturn(new PageImpl<>(movieList));
+		Mockito.when(mockoMovieRepository.findAll(Mockito.any(Predicate.class), Mockito.any(Pageable.class),
+				Mockito.any(JoinDescriptor.class))).thenReturn(new PageImpl<>(movieList));
 		// when
 		Page<Movie> page = movieService.findMoviesByCriteria(new GetMovieCommand(), new MovieSearchCriteriaCommand());
 		List<Movie> result = page.getContent();

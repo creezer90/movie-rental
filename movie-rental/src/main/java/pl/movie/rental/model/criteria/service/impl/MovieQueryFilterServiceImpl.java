@@ -25,8 +25,8 @@ public class MovieQueryFilterServiceImpl implements MovieQueryFilterService {
 
 		expressions.add(QMovie.movie.rentPeriodList.size().goe(0));
 
-		if (!StringUtils.isEmpty(mscc.getId_movie())) {
-			expressions.add(QMovie.movie.id_movie.containsIgnoreCase(mscc.getId_movie()));
+		if (!StringUtils.isEmpty(mscc.getCode())) {
+			expressions.add(QMovie.movie.code.containsIgnoreCase(mscc.getCode()));
 		}
 		if (!StringUtils.isEmpty(mscc.getTitle())) {
 			expressions.add(QMovie.movie.title.containsIgnoreCase(mscc.getTitle()));

@@ -67,7 +67,7 @@ public class MovieToMovieDtoConverterTest {
 		// when
 		MovieDTO result = movieToMovieDtoConverter.convert(movie);
 		// then
-		Assert.assertEquals("AA1993", result.getId_movie());
+		Assert.assertEquals("AA1993", result.getCode());
 		Assert.assertEquals(Long.valueOf(1L), result.getId());
 		Assert.assertEquals("2017-03-01", FORMATTER.format(movie.getRentPeriodList().get(1).getEnd_date()));
 

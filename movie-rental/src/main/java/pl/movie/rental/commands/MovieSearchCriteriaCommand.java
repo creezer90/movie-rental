@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MovieSearchCriteriaCommand {
 
-	private String id_movie;
+	private String code;
 	private String title;
 	private String country;
 	private String genre;

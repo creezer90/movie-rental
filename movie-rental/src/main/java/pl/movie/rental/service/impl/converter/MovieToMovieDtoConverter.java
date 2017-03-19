@@ -1,13 +1,6 @@
 package pl.movie.rental.service.impl.converter;
 
-import java.awt.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +21,7 @@ public class MovieToMovieDtoConverter implements ObjectConverter<Movie, MovieDTO
 
 		return MovieDTO.builder()//
 				.id(model.getId())//
-				.id_movie(model.getId_movie())//
+				.code(model.getCode())//
 				.title(model.getTitle())//
 				.country(model.getCountry())//
 				.genre(model.getGenre())//

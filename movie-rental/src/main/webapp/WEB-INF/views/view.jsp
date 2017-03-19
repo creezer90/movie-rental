@@ -84,7 +84,7 @@
 				<tr>
 					<th class="col-sm-1" onmouseover="setCursor(this, 'pointer')"
 						onmouseout="setCursor(this, 'default')"
-						onclick="orderBy('id_movie')">Movie ID <span
+						onclick="orderBy('code')">Code <span
 						class="glyphicon glyphicon-chevron-up"></span>
 					</th>
 					<th class="col-sm-4" onmouseover="setCursor(this, 'pointer')"
@@ -104,7 +104,7 @@
 
 					<tr id='${m.id}' onclick="forwardMovie('${m.id}')"
 						<c:if test="${m.is_available==false}">bgcolor="#ff5050"</c:if>>
-						<td>${m.id_movie}</td>
+						<td>${m.code}</td>
 						<td>${m.title}</td>
 						<td>${m.country}</td>
 						<td>${m.genre}</td>
@@ -148,9 +148,9 @@
 
 
 				<div class="form-group">
-					<label for="input_movie_id">Movie id:</label> <input type="text"
-						name="id_movie" value="${searchCriteria.id_movie}"
-						class="form-control" id="movie_id" />
+					<label for="input_code">Code:</label> <input type="text"
+						name="code" value="${searchCriteria.code}"
+						class="form-control" id="input_code" />
 				</div>
 				<div class="form-group">
 					<label for="input_title">Title:</label> <input type="text"

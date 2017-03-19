@@ -18,32 +18,18 @@ public class MovieTxtToSqlDbConverter {
 
 				BufferedWriter bw = new BufferedWriter(new FileWriter(output));) {
 
+			StringBuilder sb = new StringBuilder();
 			String line = "";
 			br.readLine();
 			while ((line = br.readLine()) != null) {
 				String[] splitted = line.split("\t");
 
-				bw.write("insert into movie (id, id_movie, title, country, genre, price) values (" + ++i + ", " + "'"
-						+ splitted[0] + "'" + ", " + "'" + splitted[1] + "'" + ", " + "'" + splitted[2] + "'" + ", "
-						+ "'" + splitted[3] + "'" + ", " + splitted[4] + ");" + "\n");
+				sb.append("insert into movie (id, code, title, country, genre, price) values (").append(++i)
+						.append(", '").append(splitted[0]).append("', '").//
+						append(splitted[1]).append("', '").append(splitted[2]).append("', '").append(splitted[3])
+						.append("', ").append(splitted[4]).append(");\n");
 
-				// System.out
-				// .println("insert into movie (id, id_movie, title, country,
-				// genre, price, is_available) values ("
-				// + ++i + ", " + "'" + splitted[0] + "'" + ", " + "'" +
-				// splitted[1] + "'" + ", " + "'"
-				// + splitted[2] + "'" + ", " + "'" + splitted[3] + "'" + ", " +
-				// splitted[4] + ", " + 1
-				// + ");");
-
-				// ID_filmu Tytul Kraj_produkcji Gatunek Cena_w_zl
-				// AA1993 Lista Schindlera Polska wojenny 6
-
-				// movies.add(new Movie(null, splitted[0], splitted[1],
-				// splitted[2], splitted[3],
-				// Integer.parseInt(splitted[4]), (int) (Math.random() * 3) % 2
-				// == 0 ? true : false));
-
+				bw.write(sb.toString());
 			}
 
 		} catch (Exception e) {
